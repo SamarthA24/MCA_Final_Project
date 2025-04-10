@@ -10,18 +10,18 @@ Healthcare industries generate vast volumes of data that contain hidden insights
 </p>
 
 ## Modules:
-**Patient Login:-** Secure access for patients via credentials.
-**Patient Registration:-** New users register with personal details and receive login credentials.
-**My Details:-** View personal information.
-**Disease Prediction:-** Enter medical parameters to get heart disease prediction and doctor suggestions.
-**Search Doctor:-** Search for doctors by name, location, or specialization.
-**Feedback:-** Patients can submit feedback; this is shared with the admin.
-**Doctor Login:-** Secure login for doctors.
-**Patient Details:-** Doctors can access patient profiles and medical details.
-**Notification:-** Summary notifications for doctors and admin on system usage and predicted diseases.
-**Admin Login:-** Admin access to manage the platform.
-**Add Doctor/Dataset:-** Admin can add new doctors or upload training datasets.
-**View Doctor/Patient/Disease/Feedback:-** Admin can manage and review all records and system interactions.
+- **Patient Login:-** Secure access for patients via credentials.
+- **Patient Registration:-** New users register with personal details and receive login credentials.
+- **My Details:-** View personal information.
+- **Disease Prediction:-** Enter medical parameters to get heart disease prediction and doctor suggestions.
+- **Search Doctor:-** Search for doctors by name, location, or specialization.
+- **Feedback:-** Patients can submit feedback; this is shared with the admin.
+- **Doctor Login:-** Secure login for doctors.
+- **Patient Details:-** Doctors can access patient profiles and medical details.
+- **Notification:-** Summary notifications for doctors and admin on system usage and predicted diseases.
+- **Admin Login:-** Admin access to manage the platform.
+- **Add Doctor/Dataset:-** Admin can add new doctors or upload training datasets.
+- **View Doctor/Patient/Disease/Feedback:-** Admin can manage and review all records and system interactions.
   
 ## Technology Used
 
