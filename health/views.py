@@ -215,7 +215,7 @@ def add_doctor(request,pid=None):
     return render(request, 'add_doctor.html', d)
 
 # Initialize Gemini API with your key
-genai.configure(api_key="AIzaSyBOAMZmv0wGpXe26AqZdo9XTfKjYcQxJdY")
+genai.configure(api_key="YOUR_API_KEY")
 
 def get_risk_precautions(prediction):
     """
