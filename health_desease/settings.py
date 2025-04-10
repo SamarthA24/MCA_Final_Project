@@ -27,9 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-#emial service 
-EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-SENDGRID_API_KEY = "your_real_api_key_here"
+
 
 # Application definition
 
