@@ -1,0 +1,246 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+    /* Main Styles */
+    .admin-dashboard {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .dashboard-header {
+        position: relative;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .dashboard-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
+    
+    .title-underline {
+        height: 5px;
+        width: 80px;
+        background: linear-gradient(90deg, #3498db, #9b59b6);
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    
+    .welcome-message {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-top: 2.5rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .welcome-message::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #3498db, #9b59b6);
+        border-radius: 5px;
+    }
+    
+    /* Card Styles */
+    .stat-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+        background: white;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .stat-card a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+    
+    .stat-header {
+        padding: 1.5rem;
+        color: white;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .stat-footer {
+        padding: 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .stat-access {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .stat-icon {
+        font-size: 1.5rem;
+        opacity: 0.8;
+    }
+    
+    /* Card Colors */
+    .doctors-card .stat-header {
+        background: linear-gradient(135deg, #3498db, #2980b9);
+    }
+    
+    .patients-card .stat-header {
+        background: linear-gradient(135deg, #1abc9c, #16a085);
+    }
+    
+    .feedback-card .stat-header {
+        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    }
+    
+    .search-card .stat-header {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+    }
+    
+    /* Animation */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+        }
+    }
+    
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .dashboard-title {
+            font-size: 2rem;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+
+<div class="container admin-dashboard">
+    <div class="dashboard-header text-center">
+        <h1 class="dashboard-title">ADMIN DASHBOARD</h1>
+        <div class="title-underline"></div>
+    </div>
+    
+    <div class="row">
+        <!-- Doctors Card -->
+        <div class="col-md-6 col-lg-6">
+            <div class="stat-card doctors-card">
+                <a href="{% url 'view_doctor' %}">
+                    <div class="stat-header">
+                        <h2 class="stat-number">{{doc}}</h2>
+                        <h4 class="stat-title">Total Doctors</h4>
+                    </div>
+                    <div class="stat-footer">
+                        <p class="stat-access">All access are given</p>
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Patients Card -->
+        <div class="col-md-6 col-lg-6">
+            <div class="stat-card patients-card">
+                <a href="{% url 'view_patient' %}">
+                    <div class="stat-header">
+                        <h2 class="stat-number">{{pat}}</h2>
+                        <h4 class="stat-title">Total Patients</h4>
+                    </div>
+                    <div class="stat-footer">
+                        <p class="stat-access">All access are given</p>
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Feedback Card -->
+        <div class="col-md-6 col-lg-6">
+            <div class="stat-card feedback-card">
+                <a href="{% url 'view_feedback' %}">
+                    <div class="stat-header">
+                        <h2 class="stat-number">{{feed}}</h2>
+                        <h4 class="stat-title">Total Feedback</h4>
+                    </div>
+                    <div class="stat-footer">
+                        <p class="stat-access">All access are given</p>
+                        <div class="stat-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Search Card -->
+        <div class="col-md-6 col-lg-6">
+            <div class="stat-card search-card">
+                <a href="{% url 'view_search_pat' %}">
+                    <div class="stat-header">
+                        <h2 class="stat-number">{{dis}}</h2>
+                        <h4 class="stat-title">Searched Quantity</h4>
+                    </div>
+                    <div class="stat-footer">
+                        <p class="stat-access">All access are given</p>
+                        <div class="stat-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <h1 class="welcome-message pulse">Welcome Admin</h1>
+    </div>
+</div>
+
+<!-- Add FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Add Poppins font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+{% endblock %}
