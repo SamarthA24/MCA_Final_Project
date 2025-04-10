@@ -9,28 +9,19 @@ Healthcare industries generate vast volumes of data that contain hidden insights
   The primary goal is to implement a Heart Disease Prediction System capable of extracting meaningful insights from historical health data. The system will leverage data mining and machine learning to assist in diagnosing heart conditions, thereby aiding healthcare professionals and enhancing diagnostic accuracy.
 </p>
 
-## System Analysis
-### Modules:
-- **Patient Login:-** *Patient Login to the system using his ID and Password.*
-- **Patient Registration:_** *If Patient is a new user he will enter his personal details and he
-will user Id and password through which he can login to the system.*
-- **My Details:-** *Patient can view his personal details.*
-- **Disease Prediction:-** *- Patient will specify the input parameter values. System will take
-input values and predict the disease based on the input data values specified by the
-patient and system will also suggest doctors based on the locality*
-- **Search Doctor:-** *Patient can search for doctor by specifying name, address or type.*
-- **Feedback:-** *Patient will give feedback this will be reported to the admin*
-- **Doctor Login:-** *Doctor will access the system using his User ID and Password.*
-- **Patient Details:-** *Doctor can view patient’s personal details.*
-- **Notification:-** *Admin and doctor will get notification how many people had accessed
-the system and what all are the diseases predicted by the system.*
-- **Admin Login:-** *Admin can login to the system using his ID and Password.*
-- **Add Doctor:-** *Admin can add new doctor details into the database.*
-- **Add Dataset:-** *Admin can add dataset file in database.*
-- **View Doctor:-** *Admin can view various Doctors along with their personal details.*
-- **View Disease:-** *Admin can view various diseases details stored in database.*
-- **View Patient:-** *Admin can view various patient details that had accessed the system.*
-- **View Feedback:-** *Admin can view feedback provided by various users.*
+## Modules:
+**Patient Login:-** Secure access for patients via credentials.
+**Patient Registration:-** New users register with personal details and receive login credentials.
+**My Details:-** View personal information.
+**Disease Prediction:-** Enter medical parameters to get heart disease prediction and doctor suggestions.
+**Search Doctor:-** Search for doctors by name, location, or specialization.
+**Feedback:-** Patients can submit feedback; this is shared with the admin.
+**Doctor Login:-** Secure login for doctors.
+**Patient Details:-** Doctors can access patient profiles and medical details.
+**Notification:-** Summary notifications for doctors and admin on system usage and predicted diseases.
+**Admin Login:-** Admin access to manage the platform.
+**Add Doctor/Dataset:-** Admin can add new doctors or upload training datasets.
+**View Doctor/Patient/Disease/Feedback:-** Admin can manage and review all records and system interactions.
   
 ## Technology Used
 
@@ -59,7 +50,7 @@ the system and what all are the diseases predicted by the system.*
 ### Data Set for Training:
 - heart Data 
 
-### IDEs:
+### IDE:
 - Visual Studio Code
 
 ## Run Locally
